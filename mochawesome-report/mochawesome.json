@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2017-12-25T12:59:13.225Z",
+    "end": "2017-12-25T12:59:28.939Z",
+    "duration": 15714,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "bbc2066e-f13b-4896-85cb-c8941c48dbcd",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "24ed7ba3-f5fa-4685-aa34-91e01743f7fb",
+        "title": "First Mocha WebdriverJS test",
+        "fullFile": "D:\\JavaScript\\webdriverJs\\TC1.js",
+        "file": "\\TC1.js",
+        "beforeHooks": [
+          {
+            "title": "\"before each\" hook: Launch the driver",
+            "fullTitle": "First Mocha WebdriverJS test \"before each\" hook: Launch the driver",
+            "timedOut": false,
+            "duration": 41,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "driver = new webdriver.Builder().forBrowser('chrome').build();\n\t\t driver.manage().window().maximize();\n         driver.get('http://store.demoqa.com/wp-login.php');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "98a06915-c44f-409c-9e07-3d5e3498c407",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after each\" hook: Quit Driver",
+            "fullTitle": "First Mocha WebdriverJS test \"after each\" hook: Quit Driver",
+            "timedOut": false,
+            "duration": 1,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "driver.quit();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "d563e8d7-3568-42f3-8b26-8f169f0b1da4",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "Test 1",
+            "fullTitle": "First Mocha WebdriverJS test Test 1",
+            "timedOut": false,
+            "duration": 15644,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "driver.findElement(By.css('input#user_login')).sendKeys('zmmm');\ndriver.findElement(By.css('input#user_pass')).sendKeys('Ambattur123');\ndriver.findElement(By.css('input#wp-submit')).click();\nvar getTextofStore; \ndriver.findElement(By.css('span.description')).getText().then(function(getTxt){\n \t\tgetTextofStore=getTxt;\n   \t\tconsole.log(\"Text from Landing Pge   \"+getTextofStore);\n   \t\tassert.equal(expectedMesage, getTextofStore, 'foo equal `bar`');\n});",
+            "err": {},
+            "isRoot": false,
+            "uuid": "41e2d5c8-e9dc-4910-b31a-070dbf7cc179",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "41e2d5c8-e9dc-4910-b31a-070dbf7cc179"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 15644,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 50000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2017
+}
