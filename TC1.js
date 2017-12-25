@@ -1,4 +1,3 @@
-//*********************************************************************************//
 var webdriver = require('selenium-webdriver'),
     {describe,it,after,before}=require('selenium-webdriver/testing'),
 	By=webdriver.By,
@@ -7,17 +6,12 @@ var driver;
 var assert =require('chai').assert,
     expectedMesage ='Usernames cannot be changed.';
 
-	
-
 describe('First Mocha WebdriverJS test',function(){
 	this.timeout(50000);
 	beforeEach('Launch the driver',function(){
-
 		 driver = new webdriver.Builder().forBrowser('chrome').build();
 		 driver.manage().window().maximize();
          driver.get('http://store.demoqa.com/wp-login.php');
-
-
 	});
 
 	afterEach('Quit Driver',function(){
@@ -33,10 +27,8 @@ describe('First Mocha WebdriverJS test',function(){
 		driver.findElement(By.css('span.description')).getText().then(function(getTxt){
  		getTextofStore=getTxt;
    		console.log("Text from Landing Pge   "+getTextofStore);
-   		assert.equal(expectedMesage, getTextofStore, 'foo equal `bar`');
+   		assert.equal(expectedMesage, getTextofStore, 'description should match');
 		});
-		
-         
 	});
 
 });
