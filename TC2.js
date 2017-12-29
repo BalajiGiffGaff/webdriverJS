@@ -15,7 +15,11 @@ var firstName = 'input#name_3_firstname',
 	password='input#password_2',
 	confPassword='input#confirm_password_password_2',
 	submit='input[type="submit"]',
-	postReg='p.piereg_message';
+	postReg='p.piereg_message',
+	dropDownCountry='select#dropdown_7',
+	ChooseCountry='option[value="Angola"]',
+	upload='input#profile_pic_10';
+
 
 
 describe('Form Scenario',function(){
@@ -49,16 +53,19 @@ describe('Form Scenario',function(){
 			console.log('Dance is selected');
 		});
 		driver.findElement(By.css(PhoneNumber)).sendKeys('1234567890');
-		driver.findElement(By.css(userName)).sendKeys('TestuserName');
-		driver.findElement(By.css(emailid)).sendKeys('Test_m@123.com');
+		driver.findElement(By.css(userName)).sendKeys('TestuserName_zmmm');
+		driver.findElement(By.css(emailid)).sendKeys('Test_mmm@123.com');
 		driver.findElement(By.css(password)).sendKeys('Test_143');
 		driver.findElement(By.css(confPassword)).sendKeys('Test_143');
+		driver.findElement(By.css(upload)).sendKeys('E:/Musthafa/me/Photo0078.jpg');
+		driver.findElement(By.css(dropDownCountry)).click();
+		driver.findElement(By.css(ChooseCountry)).click();
 		driver.findElement(By.css(submit)).click();
         var getTextofStore;
 		driver.findElement(By.css(postReg)).getText().then(function(getTxt){
  		getTextofStore=getTxt;
    		console.log("Text from Landing Pge   "+getTextofStore);
-   		assert.equal(expectedMesage, getTextofStore, 'description should match');
+   		assert.equal(expectedMesage, getTextofStore, 'Registered Successfully Text match');
 		});
 	});
 
