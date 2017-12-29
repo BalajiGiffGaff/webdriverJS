@@ -1,3 +1,8 @@
+/******Test ************
+Sample Project which includes uploading a file
+This includes Chai for Assertion
+Running the project with Mocha 
+************************/
 var webdriver=require('selenium-webdriver'),
 	{describe,it,after,before}=require('selenium-webdriver/testing'),
 	By=webdriver.By,
