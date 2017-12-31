@@ -11,6 +11,7 @@ var webdriver=require('selenium-webdriver'),
 var driver;
 var assert =require('chai').assert;
 var url = 'http://toolsqa.com/automation-practice-switch-windows/';
+var newBrowserTab='#content > p:nth-child(6) > button';
 
 describe('WindowHandle Test Case', function(){
 	this.timeout(150000);
@@ -32,6 +33,15 @@ describe('WindowHandle Test Case', function(){
 			console.log('Current Window handle is >>>>>'+parentHandle);
 
 		});
+		driver.findElement(By.css(newBrowserTab)).click();
+		var currentHandle;
+		driver.getAllWindowHandles().then(function(windowHandles){
+			currentHandle=windowHandles;
+			console.log('Number of Windows opened'+windowHandles.length);
+			console.log('Current Window handle is >>>>>'+currentHandle);
+
+		});
+
 
 	});
 
