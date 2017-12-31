@@ -30,7 +30,7 @@ describe('WindowHandle Test Case', function(){
 		var parentHandle;
 		driver.getWindowHandle().then(function(handle){
 			parentHandle=handle;
-			console.log('Current Window handle is >>>>>'+parentHandle);
+			console.log('Parent Window handle is >>>>>'+parentHandle);
 
 		});
 		driver.findElement(By.css(newBrowserTab)).click();
@@ -38,7 +38,22 @@ describe('WindowHandle Test Case', function(){
 		driver.getAllWindowHandles().then(function(windowHandles){
 			currentHandle=windowHandles;
 			console.log('Number of Windows opened'+windowHandles.length);
-			console.log('Current Window handle is >>>>>'+currentHandle);
+			console.log('All Window handle is >>>>>'+currentHandle);
+			driver.getTitle().then(function (title) {
+				console.log('Title of Current window -> ' + title);
+				});
+			windowHandles.forEach(function(currHandle){
+			console.log('Currently in'+currHandle);
+			if(currHandle!=parentHandle)
+			{
+				console.log('Switching to other window Now');
+				driver.switchTo().window(currHandle);
+				driver.getTitle().then(function (title) {
+				console.log('Title of new window -> ' + title);
+				});
+
+			}
+		});	
 
 		});
 
