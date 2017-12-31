@@ -26,8 +26,10 @@ describe('WindowHandle Test Case', function(){
 		});
 
 	it('Test Case 3 For Windows Handle', function(){
+		var parentHandle;
 		driver.getWindowHandle().then(function(handle){
-			console.log('Current Window handle is >>>>>'+handle);
+			parentHandle=handle;
+			console.log('Current Window handle is >>>>>'+parentHandle);
 
 		});
 
